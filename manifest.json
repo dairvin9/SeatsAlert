@@ -1,21 +1,38 @@
 {
     "manifest_version": 2,
-    "name": "SeatsAlert",
-    "version": "0.1",
-    "background": {
+    
+	"name": "SeatsAlert",
+    
+	"version": "0.1",
+    
+	"background": {
+		"all_frames": true,
         "scripts": ["background.js"]
     },
-    "content_scripts": [
+    
+	
+	"browser_action": {
+        "default_icon": "icon.png"
+	},
+	
+	"content_scripts": [
     {
         "matches": [
             "https://howdy.tamu.edu/render.UserLayoutRootNode.uP?uP_tparam=utf&utf=%2fcp%2fip%2flogin%3fsys%3dsctssb%26url%3dhttps://compass-ssb.tamu.edu/pls/PROD/bwykfcls.p_sel_crse_search"
         ],
-        "js": ["lib/jquery.js","content.js"]
-    }
-    "browser_action": {
-        "default_icon": "icon.png",
-        "default_popup": "popup.html"
-    },
-]
+        "js": ["lib/jquery.js"],
+		"all_frames": true
+    }],	
+	
+	"icons":{
+	"128":"icon.png"
+	},
+	
+	"permissions": [
+		"notifications", 
+		"activeTab",
+		"https://howdy.tamu.edu/*.p_sel_crse_search",
+		"https://compass-ssb.tamu.edu/*"		
+  ]
+	
 }
-

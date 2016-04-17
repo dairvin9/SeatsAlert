@@ -1,0 +1,44 @@
+https://developer.chrome.com/extensions/declarativeContent
+https://developer.chrome.com/extensions/desktopCapture
+https://developer.chrome.com/extensions/devtools_inspectedWindow
+https://developer.chrome.com/extensions/notifications
+Magic url
+"https://howdy.tamu.edu/render.UserLayoutRootNode.uP?uP_tparam=utf&utf=%2fcp%2fip%2flogin%3fsys%3dsctssb%26url%3dhttps://compass-ssb.tamu.edu/pls/PROD/bwykfcls.p_sel_crse_search"
+
+"matches": [
+            "<all_urls>"
+        ],
+		
+		
+"https://howdy.tamu.edu/*.p_sel_crse_search"
+
+"https://howdy.tamu.edu/*.p_sel_crse_search",
+		"https://compass-ssb.tamu.edu/*"		
+		
+		"content_scripts": {
+       "js": ["content.js", "myMain.js"]
+	     
+    },
+	
+/*
+
+
+function sendRequest() {
+    console.log("Sending request");
+    var req = new XMLHttpRequest();
+      req.open("GET", "http://www.google.com/search?hl=en&q=ajax", true);
+      req.onreadystatechange = function() {
+          if (req.readyState == 4) {
+            if (req.status == 200) {
+              alert(req.responseText);
+              document.write("OK");
+            }
+          }
+        };
+      req.send();
+*/
+
+
+There are a few ideas to get around the problem:
+1) Create a local version of the html files. This way, I have the same thing communicating with itself. The state farms guys thought I would still need a reqest, but I dont think they knew what I wanted
+2) Make a separate doc file, so that there is not communication, just a single doc file. could work.	
