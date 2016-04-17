@@ -38,7 +38,7 @@ function sendRequest() {
       req.send();
 */
 
-
-There are a few ideas to get around the problem:
-1) Create a local version of the html files. This way, I have the same thing communicating with itself. The state farms guys thought I would still need a reqest, but I dont think they knew what I wanted
-2) Make a separate doc file, so that there is not communication, just a single doc file. could work.	
+To be done:
+Get it to repeatedly get information, to see if a class opens
+Get it to ask the user which sections it wants
+Get it to send alerts somehow to the user 
