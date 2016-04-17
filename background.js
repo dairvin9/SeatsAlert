@@ -1,16 +1,19 @@
 // background.js
 
-chrome.browserAction.onClicked.addListener(function (tab) { //Fired when User Clicks ICON
-    if (tab.url.indexOf("sel_crse_search") != -1) { // Inspect whether the place where user clicked matches with our list of URL
+/**
+ * EventListener that waits for the extension's icon (in the browser bar) to be clicked.
+ */
+chrome.browserAction.onClicked.addListener(function (tab) { 
+    if (tab.url.indexOf("sel_crse_search") != -1) { // If the current website is the course schedule, it goes to the frame 
         chrome.tabs.executeScript(tab.id, {
-            "file": "myMain.js"
-        }, function () { // Execute your code
+            "file": "MoveToFrame.js"	// Executes MoveToFrame.js
+        }, function () { 
             console.log("Script Executed .. "); // Notification on Completion
         });
     }
 	else if (tab.url.indexOf("compass") != -1){
 		chrome.tabs.executeScript(tab.id, {
-            "file": "second.js"
+            "file": "SearchForSeats.js" // Executes SearchForSeats.js
         }, function () { // Execute your code
             console.log("Script Executed .. "); // Notification on Completion
         });
